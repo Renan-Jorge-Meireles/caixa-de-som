@@ -18,3 +18,13 @@ int main()
     printf("main %d", numero);
     return 0;
 }
+
+
+
+
+
+
+
+
+
+guessthe.game
