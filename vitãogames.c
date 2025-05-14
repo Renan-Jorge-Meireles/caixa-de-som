@@ -1,31 +1,42 @@
 #include <stdio.h>
 
-int main(){
-    int a;
-    int b;
+int main() {
+    float a, b;
     int menu;
     
-    printf("Digita dois Números: \n");
-    scanf("%d %d", &a, &b);
-    printf("Escolha \n 1)Soma\n 2)Multiplicação\n 3)Subtração\n 4)Divisão\n");
+    printf("Calculadora Simples\n");
+    printf("Digite dois números: ");
+    scanf("%f %f", &a, &b);
+    
+    printf("\nEscolha uma operação:\n");
+    printf("1) Soma\n");
+    printf("2) Multiplicação\n");
+    printf("3) Subtração\n");
+    printf("4) Divisão\n");
+    printf("Opção: ");
     scanf("%d", &menu);
     
-    switch(menu){
+    switch(menu) {
         case 1:
-            printf("A Soma é %d\n ", a+b);
+            printf("\nResultado: %.2f + %.2f = %.2f\n", a, b, a + b);
             break;
         case 2:
-            printf("A Multiplicação é %d\n ", a*b);
+            printf("\nResultado: %.2f * %.2f = %.2f\n", a, b, a * b);
             break;
         case 3:
-            printf("A Subtração é %d\n ", a-b);
+            printf("\nResultado: %.2f - %.2f = %.2f\n", a, b, a - b);
             break;
         case 4:
-            printf("A Divisão é %d\n ", a/b);
+            if (b != 0) {
+                printf("\nResultado: %.2f / %.2f = %.2f\n", a, b, a / b);
+            } else {
+                printf("\nErro: Divisão por zero!\n");
+            }
             break;
         default:
-            printf("Opção Invalida\n");
+            printf("\nOpção inválida!\n");
             break;
     }
+    
     return 0;
 }
